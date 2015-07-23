@@ -1,0 +1,13 @@
+<form action="/quizes/<%= quiz.id %>/answer" method="get">
+		<p>Pregunta: <%= quiz.pregunta %></p>
+		<input type="text" name="respuesta" value="Respuesta">
+		<input type="submit" value="Enviar">
+</form>
+
+<p><a href="/quizes/<%= quiz.id %>/comments/new">Nuevo Comentario </a></p>
+
+<p><strong>Comentarios: </strong></p>
+<% 
+for (index in quiz.Comments){  %>
+	<p>- <%=quiz.Comments[index].texto %> </p>
+<% } %>
